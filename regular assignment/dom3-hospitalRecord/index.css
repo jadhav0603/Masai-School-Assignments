@@ -1,0 +1,91 @@
+/* table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+} */
+
+#container{
+    margin: 10px;
+  }
+  
+  #heading{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    letter-spacing: 2px;
+    color: rgb(11, 104, 190);
+  }
+  
+  #form_record{
+    display: flex;
+    flex-wrap: wrap;
+    width: 98%;
+    margin-top: 50px;
+  }
+  
+  #form_div{
+    margin: auto;
+    box-shadow: rgba(18, 115, 243, 0.2) 0px 5px 10px 0px;
+    padding: 30px 20px;
+    border-radius: 10px;
+    background-color: rgb(250, 240, 227);
+  }
+  
+  
+  /* label{
+    margin-bottom: 15px;
+  } */
+  
+  input, select{
+    margin: 5px 0px;
+    width: 300px;
+    padding: 5px;
+  }
+  
+  select{
+    width: 313px;
+  }
+  
+  #record{
+    margin: 10px auto;
+    /* gap: 5px; */
+    /* border: 1px solid black; */
+  }
+  
+  table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-color: white;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  #submit_btn{
+    font-size: large;
+    margin-top: 25px;
+    padding: 2px;
+    width: 313px;
+    border-radius: 10px;
+    background-color: rgb(11, 104, 190);
+    color: aliceblue;
+  }
+  
+  thead{
+    background-color: rgb(11, 104, 190);
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }   
+  
+  tbody{
+    background-color: rgb(226, 239, 250);
+  }

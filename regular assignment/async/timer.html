@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="hour" min="0" max="12" />
+    <input type="number" id="min" min="0" max="60" />
+    <input type="number" id="sec" min="0" max="60" /> <br /><br />
+
+    <button id="start" onclick="handleStart()">Start</button>
+    <button id="end" onclick="handleStop()">Stop</button>
+    <button id="reset" onclick="handleReset()">Reset</button>
+</body>
+<script>
+    let hour = document.getElementById("hour");
+    let min = document.getElementById("min");
+    let sec = document.getElementById("sec");
+
+    let arr=[]
+
+    function handleStart() {
+    let hours = parseInt(hour.value);
+    let minute = parseInt(min.value);
+    let second = parseInt(sec.value);
+    
+    arr.push(hours);
+    arr.push(minute);
+    arr.push(second);
+    
+        minute += Math.floor(second / 60);
+        second = second % 60;
+
+        hours += Math.floor(minute / 60);
+        minute = minute % 60;
+
+        hour.value = hours;
+        min.value = minute;
+        sec.value = second;
+
+
+        id1 = setInterval(function () {
+            if (sec.value > 0) {
+                sec.value--;
+            } else if (sec.value == 0) {
+                if (hour.value == 0 && min.value == 0 && sec.value == 0) {
+                    clearInterval(id1);
+                } else {
+                    if (min.value > 0) {
+                        min.value--;
+                    }
+
+                    if (hour.value > 0) {
+                        min.value = 60;
+                        if (hour.value > 0) {
+                            hour.value--;
+                        }
+                    }
+
+                    if (min.value >= 0) {
+                        sec.value = 60;
+                    }
+                }
+            }
+        }, 1000);
+    }
+
+    
+    function handleStop(){
+        clearInterval(id1)
+    }
+
+    function handleReset(){
+        clearInterval(id1)
+        hour.value = arr[0];
+        min.value =  arr[1];
+        sec.value = arr[2];
+    }
+
+
+</script>
+
+</html>

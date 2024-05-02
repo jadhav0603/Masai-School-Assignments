@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 20px;
+            font-size: xx-large;
+            text-align: center;
+        }
+
+        #container{
+            max-width: 400px;
+            min-height: 500px;
+            border: 1px solid black;
+            padding: 20px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #min_max {
+            display: flex;
+            gap: 100px;
+            /* margin: auto; */
+            /* justify-content: end; */
+        }
+
+        #min {
+            border: 1px solid black;
+            padding: 20px;
+            min-width: 80px;
+            max-height: 40px;
+            text-align: center;
+            background-color: red;
+            margin: auto;
+            box-shadow: 0px 9px 20px rgba(13, 38, 76, 0.19);
+        }
+
+        #max {
+            border: 1px solid black;
+            padding: 20px;
+            min-width: 80px;
+            max-height: 40px;
+            text-align: center;
+            background-color: rgb(59, 192, 59);
+            margin: auto;
+            box-shadow: 0px 9px 20px rgba(13, 38, 76, 0.19);
+        }
+
+        #score{
+            border: 1px solid black;
+            /* padding: 10px; */
+            /* min-width: 10px; */
+            min-height: 50px;
+            text-align: center;
+            width: 380px;
+            margin: auto;
+            margin-top: 20px;
+            box-shadow: 0px 9px 20px rgba(13, 38, 76, 0.19);
+        }
+
+        #btns{
+            display: grid;
+            grid-template-columns: 119px 119px 119px ;
+            gap: 10px;
+            padding: 10px;
+            font-size: xx-large;
+        }
+        button{
+            font-size: xx-large;
+            box-shadow: 0px 9px 20px rgba(13, 38, 76, 0.19);
+        }
+        #zero{
+            grid-column-start: 2;
+        }
+
+        #submitbtn{
+            border: 1px solid black;
+            padding: 10px;
+            width: 300px;
+            /* max-height: 40px; */
+            text-align: center;
+            margin-top: 20px;
+            font-size: x-large;
+            color: white;
+            background-color: black;
+            flex-wrap: wrap;
+            box-shadow: 0px 9px 20px rgba(13, 38, 76, 0.19);
+        }
+
+        #submitbtn:hover{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="min_max">
+            <div id="min"> 43 </div>
+            <div id="max"> 2019 </div>
+        </div>
+
+        <div id="score"> </div>
+
+        <div id="btns">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button id="zero">0</button>
+        </div>
+
+        <input id="submitbtn" type="submit" value="ENTER">
+    </div>
+</body>
+
+
+<script>
+    let min = document.getElementById("min");
+    let max = document.getElementById("max");
+
+    let score = document.getElementById("score");
+
+    let key = document.querySelectorAll("button");
+
+    let enter = document.getElementById("submitbtn");
+    
+    for(let i=0; i<key.length; i++)
+    {
+        key[i].addEventListener("click", function(){
+            score.innerText += key[i].innerText;
+        })
+    }
+
+    enter.addEventListener("click",function(){
+        if(Number(score.innerText) < Number(min.innerText))
+        {
+            min.innerText = score.innerText;
+        }
+
+        if(Number(score.innerText) > Number(max.innerText))
+        {
+            max.innerText = score.innerText;
+        }
+
+        score.innerText ="";
+    })
+</script>
+
+</html>

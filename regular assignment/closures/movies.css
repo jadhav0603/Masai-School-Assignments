@@ -1,0 +1,99 @@
+#container {
+    margin: 0%;
+  }
+
+  #navbar {
+    display: flex;
+    background-color: rgb(102, 98, 98);
+    justify-content: center;
+    margin: -13px ;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+  }
+
+  input {
+    padding: 10px 20px;
+    width: 35vw;
+    border-radius: 10px 0px 0px 10px;
+  }
+
+  button {
+    background-color: black;
+    color: white;
+    margin-left: -4px;
+    padding: 0px 20px;
+    border-radius: 0px 10px 10px 0px;
+  }
+
+  #main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding-top: 70px;
+  }
+
+  #main > div {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 20vw;
+    padding: 10px;
+  }
+
+  #main > div > img {
+    width: 19vw;
+  }
+
+  @media only screen and (max-device-width: 1000px) {
+    #main {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      place-items: center;
+    }
+
+    #main > div {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      width: fit-content;
+      padding: 10px;
+    }
+
+    #main > div > img {
+      width: fit-content;
+    }
+  }
+
+  @media only screen and (max-device-width: 850px) {
+    #main {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      place-items: center;
+    }
+
+    #main > div {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      width: fit-content;
+      padding: 10px;
+    }
+
+    #main > div > img {
+      width: fit-content;
+    }
+  }
+
+  @media only screen and (max-device-width: 350px) {
+    #main {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      place-items: center;
+    }
+
+    #main > div {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      width: 71vw;
+      padding: 10px;
+    }
+
+    #main > div > img {
+      width: 70vw;
+    }
+  }

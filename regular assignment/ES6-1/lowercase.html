@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Please check the Console</h1>
+</body>
+<script>
+    let lowChar = (char)=>char.toLowerCase();
+
+    let lowArr = (input)=>{
+       return input.map(ele => ele.split('').map(lowChar).join(''))
+    }
+        
+
+    let input = ["MA", "SA", "I", "SCH", "OOL"];
+    let output = lowArr(input);
+
+    console.log(output);
+    
+</script>
+</html>

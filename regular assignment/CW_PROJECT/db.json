@@ -1,0 +1,355 @@
+{
+  
+  "vegetables": [
+    {
+      "name": "Capsicum - Green (Loose)",
+      "image": "1_vegitables_images/10000067_23-fresho-capsicum-green.webp",
+      "icon": "<i class='fas fa-circle'></i>",
+      "original_price": 112,
+      "discount": 29,
+      "fresho": "Fresho"
+    },
+    {
+      "name": "Carrot - Orange (Loose)",
+      "image": "1_vegitables_images/10000070_15-fresho-carrot-orange.webp",
+      "icon": "<i class='fas fa-circle'></i>",
+      "original_price": 86,
+      "discount": 27,
+      "fresho": "Fresho Premium"
+    },
+    {
+      "name": "Cauliflower",
+      "image": "1_vegitables_images/10000074_19-fresho-cauliflower.webp",
+      "icon": "<i class='fas fa-circle'></i>",
+      "original_price": 179,
+      "discount": 35,
+      "fresho": "Simply Fresho"
+    },
+    {
+      "name": "Coriander Leaves",
+      "image": "1_vegitables_images/10000326_14-fresho-coriander-leaves.webp",
+      "icon": "<i class='fas fa-circle'></i>",
+      "original_price": 150,
+      "discount": 27,
+      "fresho": "Fresho Premium"
+    },
+    {
+      "name": "Cucumber",
+      "image": "1_vegitables_images/40077518_1-fresho-cucumber.webp  ",
+      "icon": "<i class='fas fa-circle'></i>",
+      "original_price": 145,
+      "discount": 35,
+      "fresho": "Fresho"
+    },
+    {
+      "name": "Potato",
+      "image": "1_vegitables_images/40048459_8-fresho-potato-new-crop.webp",
+      "icon": "<i class='fas fa-circle'></i>",
+      "original_price": 190,
+      "discount": 29,
+      "fresho": "Fresho Premium"
+    },
+    {
+      "name": "Ginger (Loose)",
+      "image": "https://images.unsplash.com/photo-1599940859674-a7fef05b94ae?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "icon": "<i class='fas fa-circle'></i>",
+      "original_price": 130,
+      "discount": 18,
+      "fresho": "Simply Fresho"
+    },
+    {
+      "name": "Onion (Loose)",
+      "image": "1_vegitables_images/1201414_1-fresho-onion.webp",
+      "original_price": 89,
+      "discount": 12,
+      "fresho": "Fresho"
+    },
+    {
+      "name": "Tomato - Local",
+      "image": "https://media.istockphoto.com/id/174482804/photo/tomatoes.jpg?s=1024x1024&w=is&k=20&c=tVwUeSHxh82NEdKaTd7PddL5tObrnSEvfbkEc6-ED0Q=",
+      "icon": "<i class='fas fa-circle'></i>",
+      "original_price": 150,
+      "discount": 17,
+      "fresho": "Simply Fresho"
+    },
+    {
+      "name": "Ladies-finger",
+      "image": "1_vegitables_images/10000142_17-fresho-ladies-finger.webp",
+      "icon": "<i class='fas fa-circle'></i>",
+      "original_price": 139,
+      "discount": 15,
+      "fresho": "Simply Fresho"
+    }
+  ],
+
+  "bankDetails":[
+    {
+      "image" : "2_bank_discount_img/t1_hp_aff_m_amex_360_200324.webp"
+    },
+    {
+      "image" : "2_bank_discount_img/t1_hp_aff_m_mobikwik_360_200324.webp"
+    },
+    {
+      "image" : "2_bank_discount_img/t1_hp_aff_m_sbi-cc_360_200324.webp"
+    },
+    {
+      "image" : "2_bank_discount_img/t1_hp_aff_m_sbi-dc_360_200324.webp"
+    }
+
+  ],
+
+  "bestSeller" : [
+    {
+      "name": "Baby Wipes - Sea Breeze, No Paraben, Double Moisturising",
+      "image": "3_best_seller_img/image1.webp",
+      "original_price": 190,
+      "discount": 58,
+      "fresho": "Fresho"
+    },
+    {
+      "name": "Baby Wipes - With Aloe Vera, Jojoba Oil & Vitamin E",
+      "image": "3_best_seller_img/image2.webp",
+      "original_price": 199,
+      "discount": 47,
+      "fresho": "Fresho"
+    },
+    {
+      "name": "Baby Wipes - Fresh, No Paraben, Double Moisturising",
+      "image": "3_best_seller_img/image3.webp ",
+      "original_price": 180,
+      "discount": 47,
+      "fresho": "Fresho"
+    },
+    {
+      "name": "Baby Wipes - Cherry Blossom, No Paraben, Double Moisturising",
+      "image": "3_best_seller_img/image4.webp",
+      "original_price": 170,
+      "discount": 40,
+      "fresho": "Fresho"
+    },
+    {
+      "name": "Baby Wipes With Lid - Added With Aloe Vera, Jojoba Oil & Vitamin E",
+      "image": "3_best_seller_img/image5.webp",
+      "original_price": 180,
+      "discount": 54,
+      "fresho": "Fresho"
+    },
+    {
+      "name": "Niine Niine Baby Wipes - Cottony Soft, Enriched With Aloe Vera & Vi",
+      "image": "3_best_seller_img/image6.webp",
+      "original_price": 160,
+      "discount": 43,
+      "fresho": "Fresho"
+    },
+    {
+      "name": "Littles Baby Diaper Pants - XL, With Wetness Indicator & 12 Hours Absorption 2x24 pcs Multipack",
+      "image":"3_best_seller_img/image7.webp",
+      "original_price": 198,
+      "discount": 44,
+      "fresho": "Fresho"
+    },
+    {
+      "name": "Bodyguard Baby Wet Wipes with Vitamin E & Aloe Vera, 72 Wipes/Pack",
+      "image": "3_best_seller_img/image8.webp",
+      "original_price": 210,
+      "discount": 34,
+      "fresho": "Fresho"
+    }
+ 
+  ],
+
+  "topOffers" : [
+    {
+      "image" : "4_top_offer/topOffer(1).webp"
+    },
+    {
+      "image" : "4_top_offer/topOffer(2).webp"
+    },
+    {
+      "image" : "4_top_offer/topOffer(3).webp"
+    },
+    {
+      "image" : "4_top_offer/topOffer(4).webp"
+    }
+
+  ],
+
+
+  "fruit&veg" : [
+    {
+      "image" : "5_fruits&veg/image(5).webp",
+      "name": "fruit&veg",
+      "icon": "<i class='fas fa-circle'></i>",
+      "original_price": 112,
+      "discount": 29,
+      "fresho": "Fresho"
+    },
+    {
+      "image" : "5_fruits&veg/image(6).webp",
+      "name": "fruit&veg",
+      "icon": "<i class='fas fa-circle'></i>",
+      "original_price": 134,
+      "discount": 23,
+      "fresho": "Fresho"
+    },
+    {
+      "image" : "5_fruits&veg/image(7).webp",
+      "name": "fruit&veg",
+      "icon": "<i class='fas fa-circle'></i>",
+      "original_price": 187,
+      "discount": 45,
+      "fresho": "Fresho"
+    },
+    {
+      "image" : "5_fruits&veg/image(8).webp",
+      "name": "fruit&veg",
+      "icon": "<i class='fas fa-circle'></i>",
+      "original_price": 178,
+      "discount": 23,
+      "fresho": "Fresho"
+    }
+  ],
+
+  "fruit" : [
+    {
+      "image" : "5_fruits&veg/image(5).webp",
+      "name": "fruit&veg",
+      "icon": "<i class='fas fa-circle'></i>",
+      "original_price": 112,
+      "discount": 29,
+      "fresho": "Fresho"
+    },
+    {
+      "image" : "5_fruits&veg/image(6).webp",
+      "name": "fruit&veg",
+      "icon": "<i class='fas fa-circle'></i>",
+      "original_price": 134,
+      "discount": 23,
+      "fresho": "Fresho"
+    },
+    {
+      "image" : "5_fruits&veg/image(7).webp",
+      "name": "fruit&veg",
+      "icon": "<i class='fas fa-circle'></i>",
+      "original_price": 187,
+      "discount": 45,
+      "fresho": "Fresho"
+    },
+    {
+      "image" : "5_fruits&veg/image(8).webp",
+      "name": "fruit&veg",
+      "icon": "<i class='fas fa-circle'></i>",
+      "original_price": 178,
+      "discount": 23,
+      "fresho": "Fresho"
+    }
+  ],
+
+  "yourDailyStaples" : [
+    {
+      "image" : "6_yourDailyStaples/image(1).webp",
+      "name": "Daily Staples",
+      "original_price": 188,
+      "discount": 23,
+      "fresho": "Fresho"
+    },
+    {
+      "image" : "6_yourDailyStaples/image(2).webp",
+      "name": "Daily Staples",
+      "original_price": 378,
+      "discount": 27,
+      "fresho": "Fresho"
+    },
+    {
+      "image" : "6_yourDailyStaples/image(3).webp",
+      "name": "Daily Staples",
+      "original_price": 148,
+      "discount": 26,
+      "fresho": "Fresho"
+    },
+    {
+      "image" : "6_yourDailyStaples/image(4).webp",
+      "name": "Daily Staples",
+      "original_price": 278,
+      "discount": 23,
+      "fresho": "Fresho"
+    },
+    {
+      "image" : "6_yourDailyStaples/image(5).webp",
+      "name": "Daily Staples",
+      "original_price": 178,
+      "discount": 23,
+      "fresho": "Fresho"
+    },
+    {
+      "image" : "6_yourDailyStaples/image(6).webp",
+      "name": "Daily Staples",
+      "original_price": 378,
+      "discount": 23,
+      "fresho": "Fresho"
+    }
+  ],
+
+  "beverage" : [
+    {
+      "image" : "7_beverage/image(1).webp",
+      "name": "Beverage",
+      "original_price": 678,
+      "discount": 28,
+      "fresho": "Fresho"
+    },
+    {
+      "image" : "7_beverage/image(2).webp",
+      "name": "Beverage",
+      "original_price": 478,
+      "discount": 29,
+      "fresho": "Fresho"
+    },
+    {
+      "image" : "7_beverage/image(3).webp",
+      "name": "Beverage",
+      "original_price": 168,
+      "discount": 26,
+      "fresho": "Fresho"
+    },
+    {
+      "image" : "7_beverage/image(4).webp",
+      "name": "Beverage",
+      "original_price": 458,
+      "discount": 23,
+      "fresho": "Fresho"
+    },
+    {
+      "image" : "7_beverage/image(5).webp",
+      "name": "Beverage",
+      "original_price": 238,
+      "discount": 22,
+      "fresho": "Fresho"
+    },
+    {
+      "image" : "7_beverage/image(6).webp",
+      "name": "Beverage",
+      "original_price": 278,
+      "discount": 21,
+      "fresho": "Fresho"
+    }
+  ],
+
+  "slider" : [
+    {
+      "image" : "slider/slide(1).webp"
+    },
+    {
+      "image" : "slider/slide(2).webp"
+    },
+    {
+      "image" : "slider/slide(3).webp"
+    },
+    {
+      "image" : "slider/slide(4).webp"
+    }
+  ]
+
+  
+
+}

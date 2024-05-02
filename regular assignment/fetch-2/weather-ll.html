@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        h6{
+            color: aliceblue;
+            font-size: large;
+        }
+
+        #container{
+            width:100%;
+        }
+
+        #navbar{
+            text-align: center;
+            display: block;
+        }
+
+        input{
+            width: 300px;
+            padding: 10px;
+            border-radius: 10px 0px 0px 10px;
+        }
+        button{
+            padding: 10px;
+            margin-left: -5px;
+            border-radius: 0px 10px 10px 0px;
+            background-color: white;
+            color: black;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="navbar">
+            <input type="text" id="inputValue">
+            <button type="button" id="searchBtn">Search</button>
+        </div>
+
+        <div id="main">
+
+        </div>
+    </div>
+    
+</body>
+<script>
+    let array = [];
+    let seachBtn = document.getElementById('searchBtn')
+    searchBtn.addEventListener('click',async ()=>{
+        array = await searchData();
+        for(let i=0; i<=7; i++)
+        {
+            displayData(i);
+        }
+    })
+
+    async function searchData(){
+        let city = document.getElementById('inputValue').value
+        let data = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=bcdcf3776841089c24a3552554ee03fc`)
+        let result = await data.json();
+        console.log(result) 
+        return result;
+    }
+
+    function displayData(i){
+        let main = document.getElementById('main')
+        let div = document.createElement('div');
+        div.id = "divData";
+        div.innerHTML = `
+            <p> ${array.list[i].dt_txt} </p>
+            <img src="https://openweathermap.org/img/w/${array.list[i].weather[0].icon}.png"> 
+            <h3> ${array.list[i].main.temp} <sup>0</sup> C </h3>
+            <h3> ${array.list[i].main.feels_like} <sup>0</sup> C </h3>
+
+            <style>
+                #divData{
+                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                    background-color: rgb(61, 60, 60);
+                    border-radius : 5px;
+                    border : 0.2px solid aliceblue;
+                    padding : 10px;
+                }
+
+                img{
+                    width: 8vw;
+                }
+
+                #main{
+                    padding : 20px;
+                    color : white;
+                    background-color : rgb(61, 60, 60) ;
+                    display : flex;
+                    justify-content : center;
+                    text-align : center;
+                    flex-wrap : wrap;
+                    margin-top: 10vh;
+                }
+            </style>
+        `;
+
+        main.append(div);
+    }
+
+</script>
+</html>

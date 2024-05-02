@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Check The Console</h1>
+</body>
+<script>
+
+    function BankAccount(accountNumber,name,type,balance){
+        this.accno = accountNumber
+        this.name = name
+        this.type = type
+        this.balance = balance
+
+        this.deposit = function(amount){
+            if(amount > 0)
+            {
+                this.balance+=amount
+                console.log(`Successfully Deposited : ${amount} INR`);
+                console.log(`Total Account Balance Is : ${this.balance} INR`)
+            }
+            else{
+                console.log("You Are Entered Invalid Amount, Please Try Again")
+            }
+        }
+
+        this.withdraw = function(amount){
+            if(amount <= this.balance)
+            {
+                this.balance-=amount
+                console.log(`Available Balance : ${this.balance} INR`);
+            }
+            else{
+                console.log("Insufficent Balance");
+            }
+        }
+
+        this.checkBalance = function(){
+            console.log(`The Account Balance Is : ${this.balance} INR`);
+        }
+
+        this.isActive = function(){
+            if(this.balance > 0)
+            {
+                console.log("The Account is Active");
+            }
+            else{
+                console.log("The Account is Inactive");
+            }
+        }
+
+    }
+
+    let account1 = new BankAccount(123,"Ajay","saving", 9800);
+    console.log(account1)
+    account1.checkBalance();
+    account1.isActive();
+    account1.withdraw(9800);
+    account1.isActive();
+    account1.deposit(500);
+    account1.checkBalance();
+
+
+    let account2 = new BankAccount(1234,"Vijay","saving", 8000);
+    console.log(account2)
+    account2.checkBalance();
+    account2.isActive();
+    account2.withdraw(10000);
+    account2.withdraw(8000);
+    account2.isActive();
+    account2.deposit(1500);
+    account2.checkBalance();
+
+
+    let bankAcc = [account1,account2]
+    let sum=0
+    for(let i=0; i<bankAcc.length; i++){
+        sum+= bankAcc[i].balance
+    }
+    
+    console.log(`Your BANK All Accounts Balance Total Is : ${sum}`)
+
+</script>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        
+        #container {
+            font-size: large;
+            display:flex;
+        }
+
+        #form, #print{
+            width: 500px;
+            margin: auto;
+            border: 1px solid ;
+            box-shadow: 0px 0px 10px 0px;
+        }
+
+        input,
+        label,
+        select, button {
+            width: 200px;
+            height: 20px;
+            margin: 10px;
+            font-family: Georgia, "Times New Roman", Times, serif;
+        }
+        h1{
+            letter-spacing: 2px;
+        }
+
+        button{
+            box-shadow: 0px 0px 10px 0px;
+            background-color: aquamarine;
+            height: 30px;
+            font-size: large;
+
+        }
+
+        #colour {
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <form id="form">
+            <h1><u>&nbsp;&nbsp;TATA MOTORS&nbsp;&nbsp;</u></h1>
+            
+            <input type="text" id="model" placeholder="Enter Your Car Model Name" /><br />
+            <label for="colour">Choose Your Car colour :</label><br />
+            <input type="color" id="colour" /> <br />
+            <label>Select The Max speed upto 200 km/h</label><br />
+            <input type="range" id="range" min="0" max="200" value="100" /><br />
+            <label>Select The Type Of Seats</label><br />
+            <select id="seats">
+                <option>4 Seater</option>
+                <option>7 Seater</option>
+            </select><br />
+            <label>Select The Type Of Car</label><br />
+            <select id="type">
+                <option>Automatic</option>
+                <option>Manual</option>
+            </select><br><br>
+            <button id="btn">Generate</button>
+        </form>
+        
+        <div id="print">
+            <h1><u>Details</u></h1>
+            
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById("form").addEventListener("submit", function(event){
+        event.preventDefault();
+        getFormData();
+    })
+
+    function getFormData(){
+        let modelName = document.getElementById("model").value;
+        let color = document.getElementById("colour").value
+        let speed = document.getElementById("range").value
+        let seats = document.getElementById("seats").value
+        let type = document.getElementById("type").value
+
+        setFormData(modelName, color,speed,seats,type)
+    }
+
+    var arr = JSON.parse(localStorage.getItem("automobile")) || []
+    
+    function setFormData(model,color,speed,seats,type){
+        let ans = new SetData(model,color,speed,seats,type);
+
+        let objarr = Object.create(ans);
+        arr.push(objarr.__proto__);
+        console.log(objarr.__proto__)
+        console.log(ans);
+        
+        localStorage.setItem("automobile", JSON.stringify(arr))
+        showData()
+    }
+
+    function SetData(model,color,speed,seats,type){
+        this.model = model
+        this.color = color
+        this.speed = speed
+        this.seats = seats
+        this.type = type
+    }
+
+    function showData(){
+        let print = document.getElementById("print")
+        let h3 = document.createElement("h3");
+        h3.innerText = event.target[0].value 
+        
+        let p = document.createElement("p");
+        p.innerText = "Color : "+ event.target[1].value
+        
+        let p1 = document.createElement("p");
+        p1.innerText = "speed : " + event.target[2].value + " Km/h";
+        
+        let p2 = document.createElement("p");
+        p2.innerText = "Seats : " + event.target[3].value
+        
+        let p3 = document.createElement("p");
+        p3.innerText =" Type : " + event.target[4].value
+
+        let p4 = document.createElement("p");
+        p3.innerText =" -------------------------------- "
+
+        
+        print.append(h3, p, p1, p2, p3,p4);
+      
+
+    }
+
+</script>
+
+</html>

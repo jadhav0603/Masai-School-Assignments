@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/746bcefbb6.js" crossorigin="anonymous"></script>
+    <style>
+        #container{
+            width:100%;
+        }
+
+        #navbar{
+            text-align: center;
+        }
+
+        input{
+            width: 300px;
+            padding: 10px;
+            border-radius: 10px 0px 0px 10px;
+        }
+        button{
+            padding: 10px;
+            margin-left: -5px;
+            border-radius: 0px 10px 10px 0px;
+            background-color: black;
+            color: white;
+            font-weight: 700;
+        }
+      #time{
+        color:red;
+      }
+
+      .fa-cloud{
+        color: grey;
+      }
+
+      #infoChild2Div{
+        display: flex;
+      }
+      
+      #main{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 20px;
+      }
+
+   
+
+    </style>
+
+</head>
+<body>
+    <div id="container">
+        <div id="navbar">
+            <input type="text" id="inputValue">
+            <button type="button" id="searchBtn">Search</button>
+        </div>
+
+        <div id="main">
+            <div id="info">
+
+            </div>
+            <div id="map">
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let array = [];
+    document.getElementById('searchBtn').addEventListener('click',async()=>{
+        array = await cityData()
+        console.log(array);
+        displayData();
+    })
+
+    let inputValue = document.getElementById('inputValue')
+    async function cityData(){
+        const city = inputValue.value;
+        let data = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=ea0b2de8b99f50bff0cc0fac4c11929f`)
+        let result = await data.json();
+        return result;
+    }
+
+    function displayData(){
+        const info = document.getElementById('info') 
+        
+        let infoChild1Div = document.createElement('div');
+        info.innerHTML = `
+        <style>    
+            #info{
+                padding : 20px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            } 
+        </style>
+        <p id="time"> ${new Date().toLocaleString()} </p>
+        <h2>${array.name}, ${array.sys.country}</h2>
+        <h1><i class="fa-solid fa-cloud"></i> ${array.main.temp} <sup>o</sup>F/ <sup>o</sup>C </h1> 
+        <h4>Feels like ${array.main.temp_min} 
+            <sup>o</sup>F/ <sup>o</sup>C. 
+            ${array.weather[0].main}, ${array.weather[0].description}
+            </h4>
+        `
+        // let hour= parseInt(array.sys.sunrise % 3600);
+        // let min = parseInt((hour)/60);
+        // let sec = parseInt(hour % 60);
+
+        // console.log()
+        
+        let infoChild2Div = document.createElement('div')
+        infoChild2Div.innerHTML = `
+            <div>
+                <p> Sunrise : ${array.sys.sunrise} </p>
+                <p> Sunset  : ${array.sys.sunset} </p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-location-arrow"></i>
+                ${array.wind.speed} m/s <br>
+                <p>Humidity : ${array.main.humidity}%
+            </div>
+        `;
+        
+        info.append(infoChild1Div, infoChild2Div);
+
+        const map = document.getElementById('map');
+        map.innerHTML = `
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=${inputValue.value}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <a href="https://embedgooglemap.net/124/">123movies</a><br>
+                <style>
+                    .mapouter{
+                        position:relative;
+                        text-align:right;
+                        height:500px;
+                        width:600px;
+                    }
+                </style>
+                <a href="https://www.embedgooglemap.net">embed google maps</a>
+                <style>
+                    .gmap_canvas {
+                        overflow:hidden;
+                        background:none!important;
+                        height:500px;
+                        width:600px;
+                    }
+                </style>
+            </div>
+        </div>
+        `
+    }
+</script>
+</html>

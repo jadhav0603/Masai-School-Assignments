@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Please check the console</h1>
+</body>
+<script>
+    function Vehical(brand, model, speed, fuelType) {
+        this.brand = brand
+        this.model = model
+        this.speed = speed
+        this.fuelType = fuelType
+    }
+
+    Vehical.prototype.accelerate = function () {
+        this.speed += 10
+        console.log(`${this.brand} ${this.model} are accelerating now current speed : ${this.speed}`)
+    }
+
+    Vehical.prototype.brake = function () {
+        if (this.speed > 10) {
+            this.speed -= 10;
+            console.log(`${this.brand} ${this.model} You are pressing brakes, Now current speed is : ${this.speed}`)
+        }
+        else {
+            this.speed = 0
+            console.log(`${this.brand} ${this.model} You are pressing brakes, Now current speed is : ${this.speed}`)
+        }
+    }
+
+    Vehical.prototype.refuel = function () {
+        console.log(`${this.brand} ${this.model} is refueling.`);
+    };
+
+    function Car(brand, model, speed, fuelType, numberOfWheels) {
+        Vehical.call(this, brand, model, speed, fuelType)
+        this.numberOfWheels = numberOfWheels
+    }
+    
+    Car.prototype = Object.create(Vehical.prototype)
+    
+    Car.prototype.honk = function () {
+        console.log("honking sound")
+    }
+    
+
+    function Airplane(brand, model, speed, fuelType, numberOfEngines, hasLandingGear) {
+        Vehical.call(this, brand, model, speed, fuelType)
+        this.numberOfEngines = numberOfEngines
+        this.hasLandingGear = hasLandingGear
+    }
+    
+    Airplane.prototype = Object.create(Vehical.prototype)
+    
+    Airplane.prototype.takeoff = function () {
+        console.log("Airplane is talking off")
+    }
+    
+    
+    let myCar = new Car("tata", "xuv", 180, "petrol", 4);
+    let myAirplane = new Airplane("skyBlue", "747", 500, "petrol", 4, true);
+
+
+    myCar.accelerate();
+    myCar.brake();
+    myCar.refuel();
+    myCar.honk();
+
+    myAirplane.accelerate();
+    myAirplane.brake();
+    myAirplane.refuel();
+    myAirplane.takeoff();
+
+
+</script>
+
+</html>

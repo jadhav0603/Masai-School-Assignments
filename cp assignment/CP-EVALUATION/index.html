@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Movie App</title>
+    <style>
+      /* Write necessery styles here  */
+      #serach{
+        display: flex;
+        justify-content: center;
+        
+      }
+
+      #search-inp{
+        width: 25vw;
+        padding:10px;
+        margin: 5px;
+      }
+
+      #search-btn{
+        padding:10px;
+        margin: 5px;
+      }
+
+      #movie_container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin:10px;
+        gap:10px;
+      }
+
+      img{
+        width: 20vw;
+      }
+
+      #movie_container > div{
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        padding: 5px;
+        text-align: center;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div id="serach">
+      <input type="text" id="search-inp"/>
+      <button id="search-btn"></button>
+    </div>
+    <div id="movie_container"></div>
+  </body>
+
+  <script>
+    // Write necessery JS here
+
+    let search = document.getElementById("search-inp")
+    let btn = document.getElementById("search-btn")
+    btn.innerText="Search";
+    let movie_container = document.getElementById('movie_container')
+
+    
+    btn.addEventListener("click",async ()=>{
+      let movieName = search.value
+      try{
+      let data = await fetch (`https://www.omdbapi.com/?apiKey=764440e4&s=${movieName}`);
+      let result = await data.json();
+      console.log(result.Search);
+      displayData(result.Search)
+    }catch(error){
+      console.log(error)
+      movie_container.innerHTML=`<h2 class="error-container">Movie not found!</h2>`;
+    }
+    });
+
+    
+    
+    function displayData(result){ 
+      movie_container.innerText="";
+      result.forEach((ele)=>{
+        
+        let div = document.createElement("div")
+
+        div.innerHTML = `
+          <img src=${ele.Poster} class='poster' />
+          <h2 class='title'>${ele.Title}</h2>
+        `
+        movie_container.append(div)
+      })
+      
+    }
+  </script>
+</html>

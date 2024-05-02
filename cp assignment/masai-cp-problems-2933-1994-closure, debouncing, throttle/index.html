@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>debounce-throttle</title>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css"
+  integrity="sha512-xiunq9hpKsIcz42zt0o2vCo34xV0j6Ny8hgEylN3XBglZDtTZ2nwnqF/Z/TTCc18sGdvCjbFInNd++6q3J0N6g=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+  <link rel="shortcut icon" href="#" />
+  <link rel="stylesheet" href="./styles/index.css">
+  <script src="./scripts/index.js" defer></script>
+</head>
+
+<body>
+  <h1>debounce-throttle</h1>
+</hr>
+  <div id="box">
+    <input type="text" id="query" placeholder="Enter Something...">
+    <div>
+      <b>Default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>
+      <span id="default"></span>
+    </div>
+    <div>
+      <b>Debounce :</b>
+      <span id="debounce"></span>
+    </div>
+    <div>
+      <b>Throttle &nbsp;&nbsp;&nbsp;&nbsp;:</b>
+      <span id="throttle"></span>
+    </div>
+  </div>
+
+  <div id="container">
+    <table>
+      <thead>
+        <tr>
+          <th>Sr.</th>
+          <th>Default Users</th>
+          <th>Default Usernames</th>
+        </tr>
+      </thead>
+      <tbody id="DefaulttableRow">
+      
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Sr.</th>
+          <th>Debounce Users</th>
+          <th>Debounce Usernames</th>
+        </tr>
+      </thead>
+      <tbody id="DebouncetableRow">
+      
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Sr.</th>
+          <th>Throttel Users</th>
+          <th>Throttel Usernames</th>
+        </tr>
+      </thead>
+      <tbody id="ThrotteltableRow">
+      
+      </tbody>
+    </table>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basket data</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/746bcefbb6.js" crossorigin="anonymous"></script>
+
+    <style>
+        #container{
+        justify-content: center;
+    }
+    #importHeading{
+        width: 70vw;
+    }
+
+    #resultDiv{
+        width: 70vw;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 1vw;
+        margin: 1vw 0vw;
+    }
+
+    #footer{
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+
+    #checkOut{
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        width:20vw;
+        padding: 1vw;
+        text-align: center;
+    }
+
+    img{
+        width: 16vw;
+    }
+
+    #storedData{
+        display: flex;
+        justify-content: center;
+    }
+
+    select, button{
+        height: fit-content;
+    }
+
+    #dataContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-size: 1vw;
+        margin:2vw 0vw;
+    }
+   
+
+
+
+
+    
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="importHeading"></div>
+    </div>
+
+    <div id="storedData">
+        <div id="dataContainer"></div>
+    </div>
+
+    <div id="footer">
+        <button id="checkOut"> Check Out</button>
+    </div>
+</body>
+
+<script>
+    window.onload= function (){
+    let importData = localStorage.getItem('navbar');
+    document.getElementById('importHeading').innerHTML = importData;
+
+    let importAddBtnData = localStorage.getItem('addBtnData');
+    document.getElementById('dataContainer').innerHTML = importAddBtnData;
+}
+</script>
+</html>

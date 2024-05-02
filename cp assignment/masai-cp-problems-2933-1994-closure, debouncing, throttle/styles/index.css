@@ -1,0 +1,53 @@
+body {
+  background-color: #eef9f9;
+  color: #25316d;
+  font-weight: bold;
+}
+
+#functionality-container {
+  padding-top: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#functionality-container * {
+  margin-left: 2rem;
+}
+#employee-container {
+  width: 80%;
+  margin: 5rem auto;
+}
+.dp {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+}
+
+#container > table {
+  border: 1px solid lightgrey;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+th {
+  color: rgb(89, 149, 234);
+}
+
+b {
+  margin-left: 20%;
+}
+
+h1 {
+  font-weight: bold;
+  text-align: center;
+}
+
+#query {
+  width: 30%;
+  margin-left: 20%;
+}

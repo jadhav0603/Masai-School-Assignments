@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #userInput{
+            text-align: center;
+            background-color: black;
+            padding: 20px ;
+            margin: -10px;
+            position: fixed;
+            width: 100%;
+        }
+
+        #search{
+            cursor: pointer;
+        }
+
+        #display{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            flex-wrap: wrap;
+        }
+
+        #display > div{
+            width: fit-content;
+            gap: 1vw;
+            margin-top: 10vw;
+            flex-wrap: wrap;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 1vw;
+            text-align: center;
+        }
+
+        #display > div > img {
+            width: 20vw;
+        }
+
+        h5{
+            margin: 0;
+            color: rgb(66, 66, 66);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="userInput">
+    <input type="text" id="name" placeholder="Enter Movie Name">
+    <button id="search" onlick="searchData()">Search </button>
+    </div>
+
+    <div id="display">
+
+
+    </div>
+</body>
+<script>
+    let search = document.getElementById("search")
+    search.addEventListener("click", function(){
+        searchData();
+    })
+
+    function searchData(){
+        let name = document.getElementById("name").value
+        let display = document.getElementById("display")
+        console.log(name)
+        let data = fetch(`http://www.omdbapi.com/?s=${name}&apikey=764440e4`)
+        data.then(function(result){
+            return result.json();
+        }).then(function(result){
+            
+            console.log(result.Search)
+            display.innerText="";
+
+            for(let i=0; i<result.Search.length; i++)
+            {
+                let div=document.createElement("div")
+                let img = document.createElement("img")
+                img.src=result.Search[i].Poster
+
+                let h3 = document.createElement("h3")
+                h3.innerHTML= ` ${result.Search[i].Title} `
+
+                let h4 = document.createElement("h5")
+                h4.innerText ="Year : " + result.Search[i].Year
+
+                let h4_1 = document.createElement("h5")
+                h4_1.innerText ="Type : " + result.Search[i].Type
+
+                let h4_2 = document.createElement("h5")
+                h4_2.innerText ="imdbID : " + result.Search[i].imdbID
+
+                div.append(img, h3, h4, h4_1, h4_2);
+                display.append(div);
+            }
+        }).catch(error => {
+            display.innerText="404 Result Not Found"
+        })
+    }
+</script>
+</html>

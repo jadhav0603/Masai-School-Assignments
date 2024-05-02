@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>check the console</h1>
+</body>
+<script>
+    let arr = [1,2,3,4,5];
+    
+    let calculateAvg = (arr)=>{
+        if(arr.length == 0)
+        {
+            return 0;
+        }
+        
+        let sum = arr.reduce((acc,ele)=> acc + ele,0)
+        
+        console.log("Average : "+ sum / arr.length);
+    }
+    
+    let average = calculateAvg (arr);
+</script>
+</html>

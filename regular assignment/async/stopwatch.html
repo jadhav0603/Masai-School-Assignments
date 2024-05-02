@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #hour, #min, #sec{
+            display: inline;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="hour"> </h1>
+        <h1 id="min"> </h1>
+        <h1 id="sec"> 0</h1>
+    </div>
+    
+    <button id="start">Start</button>
+    <button id="stop"> Stop </button>
+    <button id="reset">Reset</button>
+</body>
+<script>
+    let hour = document.getElementById("hour")
+    let min = document.getElementById("min")
+    let sec = document.getElementById("sec")
+    let startbtn = document.getElementById("start")
+    let stopbtn = document.getElementById("stop")
+    let resetbtn = document.getElementById("reset")
+
+    startbtn.addEventListener("click", function(){
+        handleStart();
+    })
+
+    stopbtn.addEventListener("click", function(){
+        handleStop();
+    })
+
+    resetbtn.addEventListener("click", function(){
+        handleReset();
+    })
+
+    let i=0;
+    let j=1;
+    let k=1;
+    function handleStart(){
+            id1 = setInterval(function(){
+            sec.innerText= i++;
+            if(i==60)
+            {
+                clearInterval(id1)
+                min.innerText = j++ +":"
+                i=0
+                handleStart()
+            }
+            
+            if(j==60)
+            {
+                clearInterval(id1)
+                min.innerText = k++ +":"
+                j=0
+                handleStart()
+            }
+            
+           
+           
+            
+        },1000)
+        }
+        
+    
+
+    function handleStop(){
+        clearInterval(id1)
+    }
+
+    function handleReset(){
+        clearInterval(id1);
+        timer.innerText=0;
+        i=0;
+    }
+
+
+
+
+
+</script>
+</html>
